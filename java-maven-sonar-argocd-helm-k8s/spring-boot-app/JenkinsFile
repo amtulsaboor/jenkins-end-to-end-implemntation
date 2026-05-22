@@ -3,9 +3,6 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = '/usr/lib/jvm/java-17-openjdk-amd64'
-        PATH = "${JAVA_HOME}/bin:${PATH}"
-
         SONAR_URL = 'http://54.224.172.5:9000'
         DOCKER_IMAGE = "amtulsaboor/ultimate-cicd:${BUILD_NUMBER}"
 
@@ -16,6 +13,7 @@ pipeline {
     stages {
 
         stage('Checkout Code') {
+
             steps {
 
                 echo 'Cloning Repository...'
@@ -26,6 +24,7 @@ pipeline {
         }
 
         stage('Build and Test') {
+
             steps {
 
                 sh '''
@@ -37,6 +36,7 @@ pipeline {
         }
 
         stage('Static Code Analysis') {
+
             steps {
 
                 withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
@@ -54,6 +54,7 @@ pipeline {
         }
 
         stage('Build Docker Image') {
+
             steps {
 
                 sh '''
@@ -65,6 +66,7 @@ pipeline {
         }
 
         stage('Push Docker Image') {
+
             steps {
 
                 withCredentials([usernamePassword(
@@ -83,6 +85,7 @@ pipeline {
         }
 
         stage('Update Kubernetes Manifest') {
+
             steps {
 
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
@@ -96,7 +99,7 @@ pipeline {
 
                         git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
 
-                        git commit -m "Updated deployment image to version ${BUILD_NUMBER}" || echo "No changes"
+                        git commit -m "Updated deployment image to version ${BUILD_NUMBER}" || echo "No changes to commit"
 
                         git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main
                     '''
@@ -108,10 +111,12 @@ pipeline {
     post {
 
         success {
+
             echo 'Pipeline executed successfully!'
         }
 
         failure {
+
             echo 'Pipeline failed!'
         }
     }
