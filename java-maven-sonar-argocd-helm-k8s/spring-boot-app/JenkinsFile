@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        SONAR_URL = 'http://54.224.172.5:9000'
+        SONAR_URL = 'http://98.80.244.180:9000'
         DOCKER_IMAGE = "amtulsaboor/ultimate-cicd:${BUILD_NUMBER}"
 
         GIT_REPO_NAME = 'jenkins-end-to-end-implemntation'
