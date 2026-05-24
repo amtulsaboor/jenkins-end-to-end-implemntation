@@ -1,4 +1,5 @@
 # End-to-End CI/CD Pipeline Implementation using Jenkins, SonarQube, Docker, Kubernetes & ArgoCD
+<img width="786" height="396" alt="Screenshot 2026-05-23 at 6 37 24 PM" src="https://github.com/user-attachments/assets/0447d4b9-3352-4486-9810-02f07a44b163" />
 
 ## Project Overview
 
@@ -42,6 +43,7 @@ Developer → GitHub Repository → Jenkins Pipeline
                     ↓
           Automatic Deployment
 ```
+<img width="1014" height="1280" alt="PHOTO-2026-05-23-18-38-23" src="https://github.com/user-attachments/assets/d07dec8d-7c74-4271-aa28-6c58cba9c19e" />
 
 ---
 
@@ -71,6 +73,7 @@ Login to [AWS Console](https://aws.amazon.com/console/?utm_source=chatgpt.com) a
 | Security Group | Allow All Traffic |
 
 > Important: Delete the instance after project completion to avoid AWS billing charges.
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 4 51 20 PM" src="https://github.com/user-attachments/assets/a8514199-a23c-4720-b256-ebca1e0041ee" />
 
 ---
 
@@ -81,6 +84,7 @@ SSH into the instance:
 ```bash
 ssh -i your-key.pem ubuntu@<PUBLIC-IP>
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 4 53 11 PM" src="https://github.com/user-attachments/assets/97573699-c360-4cab-b360-fae5f861987c" />
 
 ---
 
@@ -138,6 +142,7 @@ Install Jenkins:
 ```bash
 sudo apt install jenkins -y
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 4 56 15 PM" src="https://github.com/user-attachments/assets/bfdc4ff5-a745-4db3-9223-0f98e4308806" />
 
 Start Jenkins:
 
@@ -171,6 +176,7 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
 Copy the password and paste it in Jenkins setup page.
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 4 59 10 PM" src="https://github.com/user-attachments/assets/05860c7b-6ecd-4df9-b6cd-d94e7657dc3d" />
 
 Install suggested plugins and complete setup.
 
@@ -199,6 +205,7 @@ SCM → Git
 Paste your GitHub repository URL and provide the Jenkinsfile path.
 
 Save the pipeline.
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 5 01 55 PM" src="https://github.com/user-attachments/assets/8965e106-8a17-45d1-bdca-d56658ed6597" />
 
 ---
 
@@ -216,6 +223,7 @@ Install:
 * SonarQube Scanner Plugin
 
 Restart Jenkins after installation.
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 5 03 12 PM" src="https://github.com/user-attachments/assets/900a78e7-e874-4fe0-8a37-b2cf29dc476b" />
 
 ---
 
@@ -278,6 +286,8 @@ Unzip package:
 ```bash
 unzip sonarqube-10.4.1.88267.zip
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 5 04 50 PM" src="https://github.com/user-attachments/assets/05072a20-c7a3-4c15-b45b-a083cde4b9e1" />
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 5 05 48 PM" src="https://github.com/user-attachments/assets/81701825-8111-41d6-bda8-d5a7581988bb" />
 
 Navigate to SonarQube directory:
 
@@ -296,6 +306,7 @@ Check SonarQube status:
 ```bash
 ./sonar.sh status
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 5 17 40 PM" src="https://github.com/user-attachments/assets/cec4a47f-254e-4ab7-8425-dff59bcf05f2" />
 
 ---
 
@@ -330,6 +341,7 @@ My Account → Security → Generate Tokens
 Provide token name and generate token.
 
 Copy the generated token.
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 11 43 09 PM" src="https://github.com/user-attachments/assets/1ed633bd-22bc-4b00-8f9f-2916be4e55fa" />
 
 ---
 
@@ -350,6 +362,7 @@ Add Credentials:
 | ID     | sonarqube       |
 
 Save credentials.
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 11 44 40 PM" src="https://github.com/user-attachments/assets/abb3a130-f229-4906-94e6-22e1bdd222bc" />
 
 ---
 
@@ -427,6 +440,7 @@ Choose:
 | Password | DockerHub Password     |
 
 Save credentials.
+<img width="1710" height="1107" alt="Screenshot 2026-05-23 at 11 59 26 PM" src="https://github.com/user-attachments/assets/e1d97708-30e9-4923-aa15-9f45752650ce" />
 
 ---
 
@@ -450,6 +464,7 @@ Choose:
 | Secret | GitHub Token |
 
 Save credentials.
+<img width="1710" height="1107" alt="Screenshot 2026-05-24 at 12 02 15 AM" src="https://github.com/user-attachments/assets/17ebff3a-2d04-4134-83e3-4df702b54c7a" />
 
 ---
 
@@ -481,6 +496,9 @@ Once successful:
 
 * SonarQube dashboard will display analysis results.
 * DockerHub will contain Docker image with tags.
+<img width="1710" height="1107" alt="Screenshot 2026-05-24 at 12 59 42 AM" src="https://github.com/user-attachments/assets/0d5d1539-d954-4cb2-8273-72120546b2de" />
+<img width="1710" height="1107" alt="Screenshot 2026-05-24 at 1 06 05 AM" src="https://github.com/user-attachments/assets/fb670844-a926-4e0d-afab-b3cec576a05a" />
+<img width="1710" height="1107" alt="Screenshot 2026-05-24 at 1 05 13 AM" src="https://github.com/user-attachments/assets/74bb03af-00cf-4832-adea-43ab1f63d6f9" />
 
 ---
 
@@ -569,7 +587,7 @@ Press `i` to enter insert mode and paste the following configuration.
 # Complete ArgoCD YAML Configuration
 
 ```yaml
-apiVersion: argoproj.io/v1alpha1
+apiVersion: argoproj.io/v1beta1
 kind: ArgoCD
 metadata:
   name: example-argocd
@@ -580,6 +598,8 @@ spec:
       type: NodePort
 ```
 save it.
+<img width="1710" height="1107" alt="Screenshot 2026-05-24 at 1 28 08 AM" src="https://github.com/user-attachments/assets/4ccdc8bd-993c-4e42-8f42-ee873d144a81" />
+
 ---
 
 # Step 22.3: Apply the YAML File
@@ -661,6 +681,7 @@ Example output:
 ```text
 192.168.49.2
 ```
+<img width="1710" height="1107" alt="Screenshot 2026-05-24 at 1 29 14 AM" src="https://github.com/user-attachments/assets/acf7483e-0ae6-46d1-9dfa-123c7414e7c6" />
 
 ---
 
@@ -691,6 +712,7 @@ Advanced → Proceed
 ```
 
 because ArgoCD uses self-signed certificates.
+<img width="1710" height="1107" alt="Screenshot 2026-05-24 at 1 41 34 AM" src="https://github.com/user-attachments/assets/3b4b17c0-e5d9-4f30-ba90-93862a07fc53" />
 
 ---
 
