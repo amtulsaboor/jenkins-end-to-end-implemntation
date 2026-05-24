@@ -1,5 +1,6 @@
 # End-to-End CI/CD Pipeline Implementation using Jenkins, SonarQube, Docker, Kubernetes & ArgoCD
-<img width="550" height="350" alt="Screenshot 2026-05-24 at 12 14 10 PM" src="https://github.com/user-attachments/assets/4889ba54-8329-446b-8e49-7f923879a1e8" />
+<img width="1693" height="929" alt="a2662f17-432b-4c09-bb1e-bd32b691b99c" src="https://github.com/user-attachments/assets/9ca99a78-8a85-4c4d-9933-e5ecab5415be" />
+
 
 
 ## Project Overview
