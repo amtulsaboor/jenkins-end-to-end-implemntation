@@ -45,7 +45,8 @@ Developer → GitHub Repository → Jenkins Pipeline
                     ↓
           Automatic Deployment
 ```
-<img width="1014" height="1280" alt="PHOTO-2026-05-23-18-38-23" src="https://github.com/user-attachments/assets/d07dec8d-7c74-4271-aa28-6c58cba9c19e" />
+<img width="1074" height="1280" alt="PHOTO-2026-05-23-18-42-55" src="https://github.com/user-attachments/assets/4fa91a77-20ac-4761-9e4b-7d6aa15c60ca" />
+
 
 ---
 
